@@ -1,13 +1,11 @@
 import {
   Alert,
-  Button,
   Pressable,
   SafeAreaView,
   StyleSheet,
   Switch,
   Text,
   TextInput,
-  View,
 } from 'react-native';
 import React, {useState} from 'react';
 import Spacer from './Spacer.tsx';
