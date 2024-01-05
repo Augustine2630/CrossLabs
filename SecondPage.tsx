@@ -12,6 +12,7 @@ import {
 import React, {useState} from 'react';
 import Spacer from './Spacer.tsx';
 import StatefulComponent from './Components/StatefulComponent.tsx';
+import {Calculate} from './Calculate.tsx';
 
 export function SecondPage() {
   const [number, onChangeNumber] = React.useState('');
@@ -63,6 +64,9 @@ export function SecondPage() {
       <Spacer size={20} />
       <SafeAreaView>
         <StatefulComponent />
+      </SafeAreaView>
+      <SafeAreaView>
+        <Calculate />
       </SafeAreaView>
     </SafeAreaView>
   );

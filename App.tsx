@@ -1,12 +1,13 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {Button, Text, View} from 'react-native';
+import {Button, Platform, Text, View} from 'react-native';
 import {SecondPage} from './SecondPage.tsx';
 
 const fio = {
   name: 'Череповский Максим Викторович',
   group: '224-372',
 };
+
 
 function HomeScreen({navigation}) {
   return (
@@ -35,3 +36,5 @@ function App() {
 }
 
 export default App;
+
+

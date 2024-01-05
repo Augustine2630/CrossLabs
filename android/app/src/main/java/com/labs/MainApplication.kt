@@ -1,7 +1,6 @@
 package com.labs
 
 import android.app.Application
-import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeHost
@@ -10,17 +9,20 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
+import com.facebook.react.shell.MainReactPackage
 import com.facebook.soloader.SoLoader
+import com.labs.awesomemodule.AwesomeModulePackage
 
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost =
       object : DefaultReactNativeHost(this) {
-        override fun getPackages(): List<ReactPackage> {
-          // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
-          return PackageList(this).packages
-        }
+          override fun getPackages(): List<ReactPackage> {
+              val packages = mutableListOf<ReactPackage>()
+              packages.add(MainReactPackage())
+              return packages
+          }
+
 
         override fun getJSMainModuleName(): String = "index"
 
