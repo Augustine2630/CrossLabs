@@ -1,5 +1,6 @@
 import {
   Alert,
+  Button,
   Pressable,
   SafeAreaView,
   StyleSheet,
@@ -10,6 +11,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import Spacer from './Spacer.tsx';
+import StatefulComponent from './Components/StatefulComponent.tsx';
 
 export function SecondPage() {
   const [number, onChangeNumber] = React.useState('');
@@ -36,7 +38,9 @@ export function SecondPage() {
         />
         <Pressable
           {...buttonProps}
-          onPress={() => Alert.alert('Your value is ' + number)}>
+          onPress={() => {
+            Alert.alert('Your value is ' + number);
+          }}>
           <Text style={styles.text}>{'Know value'}</Text>
         </Pressable>
       </SafeAreaView>
@@ -51,9 +55,14 @@ export function SecondPage() {
           }}
           value={isEnabled}
         />
+        <Spacer size={20} />
         <Text style={{fontSize: 26, fontWeight: 'bold', letterSpacing: 0.25}}>
           {'Change button color'}
         </Text>
+      </SafeAreaView>
+      <Spacer size={20} />
+      <SafeAreaView>
+        <StatefulComponent />
       </SafeAreaView>
     </SafeAreaView>
   );
