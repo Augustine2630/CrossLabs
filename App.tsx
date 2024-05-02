@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Button, Text, View} from 'react-native';
 import {SecondPage} from './SecondPage.tsx';
+import CameraComponent from './CameraComponent.tsx';
 
 const fio = {
   name: 'Череповский Максим Викторович',
@@ -28,7 +29,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Second" component={SecondPage} />
+        <Stack.Screen name="Second" component={CameraComponent} />
       </Stack.Navigator>
     </NavigationContainer>
   );
